@@ -14,7 +14,7 @@
 */
 
 
-$tittel = "Fredrik William Olsen - Til stede"; // Used for title tag
+$title = "Fredrik William Olsen - Til stede"; // Used for title tag
 $bg = "#e3495b"; // If not set, then using "bg.jpg"
 
 $googleAnalyticsID = "";
@@ -22,7 +22,7 @@ $googleAnalyticsID = "";
 $links["wimp"] = "http://wimp.no/album/35970585";
 $links["spotify"] = "";
 $links["itunes"] = "";
-$links["platek"] = "http://www.platekompaniet.no/Musikk.aspx/CD/Fredrik_William_Olsen/Til_Stede/?id=GRCD4441";
+$links["platekompaniet"] = "http://www.platekompaniet.no/Musikk.aspx/CD/Fredrik_William_Olsen/Til_Stede/?id=GRCD4441";
 $links["cdon"] = "http://cdon.no/musikk/olsen_fredrik_william/til_stede-29903089";
 $links["grappa"] = "";
 
@@ -38,7 +38,7 @@ $links["grappa"] = "";
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title><?php echo $tittel; ?></title>
+        <title><?php echo $title; ?></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -106,7 +106,7 @@ $links["grappa"] = "";
 
         <div class="main-container">
             
-        	<div class="cover"><img src="cover.jpg"></div>
+        	<div class="cover"><img alt="<?php echo $title; ?>" src="cover.jpg"></div>
 
 
         	<div class="links">
@@ -116,7 +116,7 @@ $links["grappa"] = "";
                         foreach ($links as $linkname => $linkvalue) {
                             if ($linkvalue) { // If the link have a value, print it!
                                 if ($linkname === "cdon") { echo "<br>"; } // If CDON, then make a linebreak
-                                echo '<li><a class="' . $linkname . '" href="' . $linkvalue . '"><img src="lib/' . $linkname .'.png"></a></li>' . "\n";
+                                echo '<li><a class="' . $linkname . '" href="' . $linkvalue . '"><img  alt="' . $linkname . '" src="lib/' . $linkname .'.png"></a></li>' . "\n";
                             }
                         }
 
